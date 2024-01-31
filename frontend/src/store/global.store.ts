@@ -30,11 +30,11 @@ export const useGlobalStore = defineStore("global", () => {
         "generate-files",
         {
           module: module.value,
-          content: content.value,
+          content: module.value === GeneratableModule.Typo && content.value,
           clickout: clickout.value,
           dimensions: dimensions.value,
           position: position.value,
-          color: color.value,
+          color: module.value === GeneratableModule.Background && color.value,
         },
         { headers: { Accept: "application/blob" } }
       )
