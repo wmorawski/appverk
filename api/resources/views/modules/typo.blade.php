@@ -1,3 +1,5 @@
 <x-generator :$title>
-    {{ $content }}
+    <div id="typo-module">
+        {{ $content }}
+    </div>
 </x-generator>

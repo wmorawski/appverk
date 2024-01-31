@@ -10,11 +10,11 @@ class BackgroundModuleService implements ModuleGeneratorServiceInterface
     {
     }
 
-    public function generate($clickout, $dimensions)
+    public function generate($clickout, $dimensions, $position)
     {
         $html = $this->htmlGeneratorService->generate('modules.background', ['title' => 'Background module']);
         $js = $this->javascriptGeneratorService->generate('background-module', $clickout);
-        $css = $this->cssGeneratorService->generate('background-module', $dimensions, request()->input('color'));
+        $css = $this->cssGeneratorService->generate('background-module', $dimensions, $position, request()->input('color'));
         $zip = $this->zipGeneratorService->generate([$html, $js, $css]);
         return $zip;
     }

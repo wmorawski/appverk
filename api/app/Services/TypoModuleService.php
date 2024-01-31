@@ -10,11 +10,11 @@ class TypoModuleService implements ModuleGeneratorServiceInterface
   {
   }
 
-  public function generate($clickout, $dimensions)
+  public function generate($clickout, $dimensions, $position)
   {
     $html = $this->htmlGeneratorService->generate('modules.typo', ['title' => 'Typo module', 'content' => request()->input('content')]);
     $js = $this->javascriptGeneratorService->generate('typo-module', $clickout);
-    $css = $this->cssGeneratorService->generate('typo-module', $dimensions);
+    $css = $this->cssGeneratorService->generate('typo-module', $dimensions, $position);
     $zip = $this->zipGeneratorService->generate([$html, $js, $css]);
     return $zip;
   }

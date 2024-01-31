@@ -10,5 +10,5 @@ use App\Services\CssGeneratorService;
 interface ModuleGeneratorServiceInterface
 {
     public function __construct(ZipGeneratorService $zipGeneratorService, HtmlGeneratorService $htmlGeneratorService, JavascriptGeneratorService $javascriptGeneratorService, CssGeneratorService $cssGeneratorService);
-    public function generate(string $clickout, array $dimensions);
+    public function generate(string $clickout, array $dimensions, $position);
 }
