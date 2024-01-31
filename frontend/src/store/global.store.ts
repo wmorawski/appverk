@@ -6,7 +6,7 @@ import { IHttpService } from "../types/http.types";
 
 export const useGlobalStore = defineStore("global", () => {
   const module = ref<GeneratableModule>(GeneratableModule.Background);
-  const content = ref<string>("");
+  const content = ref<string>("Lorem ipsum");
   const clickout = ref<string>("https://appverk.com");
   const color = ref<string>("#ff9b00");
   const dimensions = ref<ModuleDimensions>({
