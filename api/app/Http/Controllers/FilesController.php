@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Storage;
 
 class FilesController extends Controller
 {
-    private $moduleGeneratorServiceInterface;
 
-    public function __construct(ModuleGeneratorServiceInterface $moduleGeneratorServiceInterface) {
-        $this->moduleGeneratorServiceInterface = $moduleGeneratorServiceInterface;
+    public function __construct(private ModuleGeneratorServiceInterface $moduleGeneratorServiceInterface)
+    {
     }
 
-    public function index() {
+    public function index()
+    {
         $clickout = request()->input('clickout');
         $dimensions = request()->input('dimensions');
         $file = $this->moduleGeneratorServiceInterface->generate($clickout, $dimensions);
