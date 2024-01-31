@@ -52,7 +52,7 @@ const store = useGlobalStore();
             id="left"
             type="number"
             name="left"
-            v-model="store.dimensions.left"
+            v-model="store.position.left"
           />
         </div>
       </div>
@@ -63,7 +63,7 @@ const store = useGlobalStore();
             id="top"
             type="number"
             name="top"
-            v-model="store.dimensions.top"
+            v-model="store.position.top"
           />
         </div>
       </div>

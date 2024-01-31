@@ -6,6 +6,9 @@ export enum GeneratableModule {
 export type ModuleDimensions = {
   width: number;
   height: number;
+};
+
+export type ModulePosition = {
   top: number;
   left: number;
 };

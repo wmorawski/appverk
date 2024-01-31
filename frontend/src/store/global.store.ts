@@ -1,5 +1,9 @@
 import { defineStore } from "pinia";
-import { GeneratableModule, ModuleDimensions } from "../types/module.types";
+import {
+  GeneratableModule,
+  ModuleDimensions,
+  ModulePosition,
+} from "../types/module.types";
 import { inject, ref } from "vue";
 import { httpServiceToken } from "../types/injection-tokens";
 import { IHttpService } from "../types/http.types";
@@ -12,6 +16,8 @@ export const useGlobalStore = defineStore("global", () => {
   const dimensions = ref<ModuleDimensions>({
     width: 100,
     height: 100,
+  });
+  const position = ref<ModulePosition>({
     top: 0,
     left: 0,
   });
@@ -27,6 +33,7 @@ export const useGlobalStore = defineStore("global", () => {
           content: content.value,
           clickout: clickout.value,
           dimensions: dimensions.value,
+          position: position.value,
           color: color.value,
         },
         { headers: { Accept: "application/blob" } }
@@ -49,6 +56,7 @@ export const useGlobalStore = defineStore("global", () => {
     content,
     dimensions,
     color,
+    position,
     generateFiles,
   };
 });
